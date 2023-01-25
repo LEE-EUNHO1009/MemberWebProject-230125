@@ -45,7 +45,7 @@
 		} else {	
 	%>
 		<script type="text/javascript">
-			alert('회원 가입이 실패! 다시 확인해주세요.');
+			alert('회원 가입 실패! 다시 확인해주세요.');
 			document.location.href="join.jsp";
 		</script>
 	

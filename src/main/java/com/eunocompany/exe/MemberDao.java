@@ -243,4 +243,42 @@ public class MemberDao {
 		
 	}
 	
+	public int delete(String id) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "DELETE FROM members WHERE id=?";
+		
+		int resultFlag = 0;
+		
+		try {
+			Class.forName(driverName);//드라이버 불러오기
+			conn = DriverManager.getConnection(url, username, password);//DB 연동
+			
+			pstmt = conn.prepareStatement(sql);			
+			pstmt.setString(1, id);
+			
+			
+			resultFlag = pstmt.executeUpdate();//성공하면 1로 값이 변경
+		
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) {
+					pstmt.close();
+				}
+				if(conn != null) {
+					conn.close();
+				}				
+			}catch(Exception e2) {
+				e2.printStackTrace();
+			}
+			
+		}
+		
+		return resultFlag;//1이면 정보삭제 성공
+		
+	}
+	
 }
