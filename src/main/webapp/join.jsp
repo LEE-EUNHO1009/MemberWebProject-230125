@@ -9,15 +9,13 @@
 <body>
 	<h2>회원 가입</h2>
 	<hr>
-	<form action="joinOk">
+	<form action="joinOk.jsp">
 		아이디 : <input type="text" name="id"><br><br>
 		비밀번호 : <input type="password" name="pw"><br><br>
 		이름 : <input type="text" name="name"><br><br>
 		이메일 : <input type="text" name="email"><br><br>
-		<input type="submit" value="회원 가입">
+		<input type="submit" value="회원가입">
 		<input type="button" value="취소" onclick="javascript:window.location='login.jsp'">
-	
 	</form>
-	
 </body>
 </html>
